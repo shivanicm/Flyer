@@ -7,7 +7,47 @@
     <link href="css/background-orange.css" rel="stylesheet" />
     <link href="css/background-yellow.css" rel="stylesheet" />
     <link href="css/jumbo-padding.css" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" type="text/css">
+    <script type="text/javascript" src="aloha/lib/require.js"></script>
+    <script type="text/javascript" src="aloha/lib/vendor/jquery-1.7.2.js"></script>
+
+
+    <script type="text/javascript">
+        Aloha = {};
+        Aloha.settings = {
+            sidebar: { disabled: true },
+            plugins: {
+                format: {
+                    hotKey: { formatPre: 'alt+ctrl+p', }
+                },
+                alignment: {
+                    config: ['right', 'left', 'center', 'justify'],
+
+                    editables: {
+                        '#one': ['right', 'left'],
+                        '#two': [],
+                        '#three': ['left', 'right', 'top', 'middle', 'bottom']
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- load the Aloha Editor core and some plugins -->
+    <script src="aloha/lib/aloha.js"
+            data-aloha-plugins="common/ui,
+                        common/format,
+                        common/list,
+                        common/link,
+                        common/align ">
+    </script>
+
+    <!-- load the Aloha Editor CSS styles -->
+    <link href="aloha/css/aloha.css" rel="stylesheet" type="text/css" />
+
+    <link href="css/print.css" rel="stylesheet" media="print">
 </head>
+
 <body>
 
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -50,6 +90,22 @@
             </div>
         </div>
 
+        <div id="main">
+            <div id="content"><p>Sample Test to play with Aloha</p></div>
+        </div>
+        <script type="text/javascript">
+            Aloha.ready(function () {
+                Aloha.jQuery('#content').aloha();
+            });
+        </script>
+
+        <div class="footer">
+            <div class="container">
+                <center>
+                <p class="text-muted"><b>FlyMu</b> is made by Aman, Shivani, and Amukta.</p>
+                </center>
+            </div>
+        </div>
 
 </body>
 </html>
